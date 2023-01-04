@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: app_frontend
+    build: ./interfaces
+    ports:
+      - 3000:3000
+    platform: linux/x86_64
+    working_dir: /app-frontend
+    depends_on:
+      - backend
+
+  backend:
+    container_name: app_backend
+    build: ./clients-api
+    ports:
+      - 3001:3001
+    platform: linux/x86_64
+    working_dir: /app-backend
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/Api
+
+  db:
+    image: mongo:5.0.7
+    container_name: database
+    platform: linux/x86_64
+    ports:
+      - 27017:27017
+    restart: 'always'
+
+networks:
+  default:
+    name: everything_api
