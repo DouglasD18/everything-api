@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #69C0C0;
+}
+
+.wrap-login {
+  width: 390px;
+  background-color: #6E675C;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 77px 55px 33px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form-title {
+  display: block;
+  font-size: 30px;
+  color: #CCD06D;
+  line-height: 1.2;
+  text-align: center;
+} 
+
+.login-form-title img {
+  width: 90px;
+}
+
+.wrap-input {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
+}
+
+.input {
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+  border: none;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  padding: 0 5px;
+}
+
+.input:focus {
+  outline: 0;
+}
+
+.focus-input {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  color: #adadad;
+}
+
+.focus-input::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+.focus-input::after {
+  font-size: 15px;
+  color: #999999;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  top: 16px;
+  left: 0;
+  position: absolute;
+  padding-left: 5px;
+
+  content: attr(data-placeholder);
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+.input:focus + .focus-input::before {
+  width: 100%;
+}
+
+.input:focus + .focus-input::after {
+  top: -15px;
+}
+
+.container-login-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 13px;
+  text-decoration: none;
+}
+
+.login-form-btn {
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  color: #6E675C;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #69C0C0;
+}
+
+.login-form-btn:disabled:hover {
+  cursor: default;
+  background-color: #999999;
+}
+
+.login-form-btn:hover {
+  cursor: pointer;
+}
+
+.remember-me {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.remember-me-txt {
+  margin-left: 7px;
+}
