@@ -1,7 +1,6 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post, Req } from "@nestjs/common";
 import { ClientsService } from "../services/clients.service";
 import { ClientBody } from "../dtos/clients.dto";
-import { Client } from "../interfaces/clients.interface";
 
 @Controller()
 export class ClientsController {
@@ -16,5 +15,14 @@ export class ClientsController {
     return {
       client,
     }
+  }
+
+  @Get('clients')
+  async readAll() {
+    const clients = await this.clientsService.readAll();
+
+    return {
+      clients,
+    };
   }
 }

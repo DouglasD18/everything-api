@@ -19,12 +19,8 @@ export class ClientsService {
     return this.clientsModel.find().exec();
   }
 
-  async read(nome: string): Promise<Client> {
-    return this.clientsModel.findOne({ "nome": nome }).exec();
-  }
-
-  async delet(clientBody: ClientBody): Promise<Client> {
+ /* async delet(clientBody: ClientBody): Promise<Client> {
     const nome = clientBody.nome;
     return this.clientsModel.deleteOne({ nome });
-  }
+  } */
 }

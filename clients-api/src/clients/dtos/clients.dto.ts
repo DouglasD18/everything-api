@@ -15,6 +15,7 @@ export class ClientBody {
   @IsNotEmpty({
     message: "client phone should not be empty.",
   })
+  @Length(11)
   telefone: String;
 
   @IsNotEmpty({
