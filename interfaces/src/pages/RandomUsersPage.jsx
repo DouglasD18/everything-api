@@ -4,10 +4,10 @@ import RandomUserGenerator from '../helpers/RandomUsers';
 
 export default function RandomUsersPage() {
   const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(10);
 
   const nextPage = () => {
-    setPage(page + 1);
+    setPage(page + 10);
   }
 
   useEffect(() => {
@@ -22,7 +22,9 @@ export default function RandomUsersPage() {
     <div>
       <h1>Usuários</h1>
       { users.map((user, index) => {
-
+        if (index < page && ) {
+          
+        }
       })}
       <button
         type="submit"

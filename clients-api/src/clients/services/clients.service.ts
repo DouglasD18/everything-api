@@ -15,12 +15,22 @@ export class ClientsService {
     return createdClient.save();
   }
 
+  async read(nome: string): Promise<Client> {
+    return this.clientsModel.findOne({ nome });
+  }
+
   async readAll(): Promise<Client[]> {
     return this.clientsModel.find().exec();
   }
 
- /* async delet(clientBody: ClientBody): Promise<Client> {
-    const nome = clientBody.nome;
-    return this.clientsModel.deleteOne({ nome });
-  } */
+  async update(nome: string, client: ClientBody): Promise<Client> {
+    await this.clientsModel.updateOne({ nome }, client);
+    return await this.read(nome);
+  }
+
+ async delete(nome: string): Promise<Client> {
+    const client = await  this.read(nome);
+    await this.clientsModel.deleteOne({ nome });
+    return client;
+  } 
 }
